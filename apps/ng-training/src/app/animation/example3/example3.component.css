@@ -1,0 +1,12 @@
+.box {
+  width: 300px;
+  display: block;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+}
+
+button {
+  margin: 15px;
+}

@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-card-title>@angular/flex-layout Demo</mat-card-title>
+  <div class="container" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+
+    <ng-container *ngFor="let _ of [1,2,3,4,5,6]">
+      <!-- fxFlex = flex-grow flex-shrink flex-basis -->
+      <fis-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%"></fis-card>
+    </ng-container>
+  </div>
+</mat-card>

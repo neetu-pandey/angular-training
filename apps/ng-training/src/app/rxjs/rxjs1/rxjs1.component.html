@@ -1,0 +1,21 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>RxJS Calls</mat-card-title>
+    <div>
+      <button mat-raised-button color="primary" (click)="getUsers()">Observable from Promise</button>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" (click)="getFromCounter()">Observable from a Counter</button>
+    </div>
+    <div>
+      <button id="my-element" color="primary" mat-raised-button (click)="getFromEvent()">Observable from an Event</button>
+    </div>
+  </mat-card>
+  <mat-card>
+    <mat-card-title>Result</mat-card-title>
+    <div>
+      <pre *ngIf="asyncRes">{{res$ | async | json}}</pre>
+      <pre *ngIf="!asyncRes">{{res | json}}</pre>
+    </div>
+  </mat-card>
+</div>

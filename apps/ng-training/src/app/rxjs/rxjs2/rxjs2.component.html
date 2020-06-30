@@ -1,0 +1,27 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>RxJS Operators</mat-card-title>
+    <mat-card-subtitle>Data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</mat-card-subtitle>
+    <div>
+      <button mat-raised-button (click)="callMap()" color="primary">Map (Square of Numbers)</button>
+    </div>
+    <div>
+      <button mat-raised-button (click)="callFilter()" color="primary">Pipe (Square of  Odd Numbers)</button>
+    </div>
+    <div>
+      <button mat-raised-button (click)="callCombineLatest()" color="primary">Combine Latest</button>
+    </div>
+    <div>
+      <button mat-raised-button (click)="callForkJoin()" color="primary">ForkJoin</button>
+    </div>
+  </mat-card>
+  <mat-card>
+    <mat-card-title>Result</mat-card-title>
+    <div>
+      <pre *ngIf="!asyncRes">{{res | json}}</pre>
+    </div>
+  </mat-card>
+</div>
+
+
+

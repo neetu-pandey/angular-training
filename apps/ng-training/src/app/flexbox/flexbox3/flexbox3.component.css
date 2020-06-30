@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56vh;
+}
+
+.content {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  background-color: brown;
+  color: white;
+  text-align: center;
+  vertical-align: center;
+  line-height: 200px;
+  font-size: 20px;
+}

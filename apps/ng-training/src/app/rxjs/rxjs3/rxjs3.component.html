@@ -1,0 +1,26 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>RxJS Subject</mat-card-title>
+    <div>
+      <button mat-raised-button (click)="callSubject()" color="primary">Subject</button>
+    </div>
+    <div>
+      <button mat-raised-button (click)="callBehaviorSubject()" color="primary">Behavior Subject</button>
+    </div>
+    <div>
+      <button mat-raised-button (click)="callReplaySubject()" color="primary">Replay Subject</button>
+    </div>
+    <div>
+      <button mat-raised-button (click)="callAsyncSubject()" color="primary">Async Subject</button>
+    </div>
+  </mat-card>
+  <mat-card>
+    <mat-card-title>Result</mat-card-title>
+    <div>
+      <pre>{{ res | json }}</pre>
+    </div>
+  </mat-card>
+</div>
+
+
+

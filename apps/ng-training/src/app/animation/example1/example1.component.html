@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-title>Simple Animation</mat-card-title>
+  <!-- <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
+    <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+    <button mat-raised-button (click)="toggle()">Toggle</button>
+  </div> -->
+
+  <div [@openClose]="state" class="open-close-container"
+    (@openClose.start)="onAnimationEvent($event)" (@openClose.done)="onAnimationEvent($event)">
+    <p>The box is now {{ state }}!</p>
+    <button mat-raised-button (click)="changeState()">Change State</button>
+  </div>
+</mat-card>

@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-title>Animation Event</mat-card-title>
+  <div class="container">
+    <div class="open-close-container" [@openClose]="show ? true: false" (@openClose.start)="onAnimationEvent($event)"
+      (@openClose.done)="onAnimationEvent($event)">
+    </div>
+    <div>
+      <button color="primary" mat-raised-button (click)="show = !show">Trigger Animation Event</button>
+    </div>
+  </div>
+</mat-card>

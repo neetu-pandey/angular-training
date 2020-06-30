@@ -1,0 +1,16 @@
+.open-close-container {
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  font-weight: bold;
+  height: 100px;
+  width: 100px;
+  margin: 30px;
+}
+
+.container {
+  /* height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}

@@ -1,0 +1,113 @@
+<mat-card>
+  <mat-card-title>Container Config</mat-card-title>
+  <div>
+    <mat-radio-group [(ngModel)]="flexDirection">
+      <b>Flex Direction:</b>
+      <mat-radio-button value="row">Row</mat-radio-button>
+      <mat-radio-button value="column">Column</mat-radio-button>
+      <mat-radio-button value="row-reverse">Row Reverse</mat-radio-button>
+      <mat-radio-button value="column-reverse">Column Reverse</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div>
+    <mat-radio-group [(ngModel)]="flexWrap">
+      <b>Flex Wrap:</b>
+      <mat-radio-button value="wrap">Wrap</mat-radio-button>
+      <mat-radio-button value="nowrap">No Wrap</mat-radio-button>
+      <mat-radio-button value="wrap-reverse">Wrap Reverse</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div>
+    <mat-radio-group [(ngModel)]="justifyContent">
+      <b>Justify Content:</b>
+      <mat-radio-button value="center">Center</mat-radio-button>
+      <mat-radio-button value="flex-start">Flex Start</mat-radio-button>
+      <mat-radio-button value="flex-end">Flex End</mat-radio-button>
+      <mat-radio-button value="space-around">Space Around</mat-radio-button>
+      <mat-radio-button value="space-between">Space Between</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div>
+    <mat-radio-group [(ngModel)]="alignItems">
+      <b>Align Items:</b>
+      <mat-radio-button value="center">Center</mat-radio-button>
+      <mat-radio-button value="flex-start">Flex Start</mat-radio-button>
+      <mat-radio-button value="flex-end">Flex End</mat-radio-button>
+      <mat-radio-button value="stretch">Stretch</mat-radio-button>
+      <mat-radio-button value="baseline">Baseline</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div>
+    <mat-radio-group [(ngModel)]="alignContent">
+      <b>Align Content:</b>
+      <mat-radio-button value="center">Center</mat-radio-button>
+      <mat-radio-button value="flex-start">Flex Start</mat-radio-button>
+      <mat-radio-button value="flex-end">Flex End</mat-radio-button>
+      <mat-radio-button value="stretch">Stretch</mat-radio-button>
+      <mat-radio-button value="baseline">Baseline</mat-radio-button>
+    </mat-radio-group>
+  </div>
+</mat-card>
+
+<mat-card>
+  <div class="flex-container" [ngStyle]="getStyleValues()">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+  </div>
+</mat-card>
+
+<!-- Order Property -->
+<!-- <mat-card>
+  <div class="flex-container" [ngStyle]="getStyleValues()">
+    <div style="order: 3">1</div>
+    <div style="order: 2">2</div>
+    <div style="order: 4">3</div>
+    <div style="order: 1">4</div>
+  </div>
+</mat-card> -->
+
+<!-- flex-grow -->
+<!-- <mat-card>
+  <div class="flex-container" [ngStyle]="getStyleValues()">
+    <div style="flex-grow: 2">1</div>
+    <div style="flex-grow: 8">2</div>
+    <div style="flex-grow: 8">3</div>
+  </div>
+</mat-card> -->
+
+<!-- flex-shrink (wrap:nowrap)-->
+<!-- <mat-card>
+  <div class="flex-container" [ngStyle]="getStyleValues()">
+    <div>1</div>
+    <div>2</div>
+    <div style="flex-shrink: 0">3</div>
+    <div style="flex-shrink: 2">4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+  </div>
+</mat-card> -->
+
+<!-- flex-basis -->
+<!-- <mat-card>
+  <div class="flex-container" [ngStyle]="getStyleValues()">
+    <div style="flex: 0 1 auto">1</div>
+    <div>2</div>
+    <div style="flex-basis: 200px">3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+</mat-card> -->

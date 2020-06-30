@@ -1,0 +1,19 @@
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab [label]="demoTabNames[0]" >
+    <ng-content select="demo1"></ng-content>
+  </mat-tab>
+  <mat-tab [label]="demoTabNames[1]" >
+    <ng-content select="demo2"></ng-content>
+  </mat-tab>
+  <mat-tab [label]="demoTabNames[2]" *ngIf="demoTabs > 2" >
+    <ng-content select="demo3"></ng-content>
+  </mat-tab>
+  <mat-tab [label]="demoTabNames[3]" *ngIf="demoTabs > 3" >
+    <ng-content select="demo4"></ng-content>
+  </mat-tab>
+  <mat-tab label="Links">
+    <ng-content select="links"></ng-content>
+  </mat-tab>
+</mat-tab-group>
+
+
