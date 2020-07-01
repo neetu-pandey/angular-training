@@ -32,6 +32,9 @@
     "ngrx-store-app-e2e": {
       "tags": [],
       "implicitDependencies": ["ngrx-store-app"]
+    },
+    "customers": {
+      "tags": []
     }
   }
 }
