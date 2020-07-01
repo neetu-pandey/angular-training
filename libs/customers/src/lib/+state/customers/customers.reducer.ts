@@ -3,7 +3,6 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 import * as CustomersActions from './customers.actions';
 import { CustomersEntity } from './customers.models';
-
 export const CUSTOMERS_FEATURE_KEY = 'customers';
 
 export interface State extends EntityState<CustomersEntity> {
@@ -12,13 +11,7 @@ export interface State extends EntityState<CustomersEntity> {
   error?: string | null; // last none error (if any)
 }
 
-export interface CustomersPartialState {
-  readonly [CUSTOMERS_FEATURE_KEY]: State;
-}
-
-export const customersAdapter: EntityAdapter<CustomersEntity> = createEntityAdapter<
-  CustomersEntity
->();
+export const customersAdapter: EntityAdapter<CustomersEntity> = createEntityAdapter< CustomersEntity >();
 
 export const initialState: State = customersAdapter.getInitialState({
   // set initial required properties
@@ -38,7 +31,10 @@ const customersReducer = createReducer(
   on(CustomersActions.loadCustomersFailure, (state, { error }) => ({
     ...state,
     error,
-  }))
+  })),
+  on(CustomersActions.addCustomer, (state, { customer }) =>
+    customersAdapter.addOne(customer, { ...state, loaded: true })
+  )
 );
 
 export function reducer(state: State | undefined, action: Action) {

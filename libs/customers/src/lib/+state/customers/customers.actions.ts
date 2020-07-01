@@ -12,3 +12,13 @@ export const loadCustomersFailure = createAction(
   '[Customers] Load Customers Failure',
   props<{ error: any }>()
 );
+
+export const addCustomer = createAction(
+  '[Customers] Add Customer',
+  props<{ customer: CustomersEntity }>()
+)
+
+export const removeCustomer = createAction(
+  '[Customers] Remove Customer',
+  props<{ customer: CustomersEntity }>()
+)

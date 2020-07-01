@@ -1,6 +1,7 @@
 /**
- * Interface for the 'Customers' data
+ * Class for the 'Customers' data
  */
-export interface CustomersEntity {
+export class CustomersEntity {
   id: string | number; // Primary ID
+  name: string;
 }

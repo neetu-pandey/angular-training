@@ -9,10 +9,15 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
+import { CustomersModule } from '@fis/customers';
+import { CustomersViewComponent } from './customers-view/customers-view.component';
+import { CustomerAddComponent } from './customer-add/customer-add.component';
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CustomersViewComponent, CustomerAddComponent],
   imports: [
     BrowserModule,
+    CustomersModule,
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),
     StoreModule.forRoot(
       {},
