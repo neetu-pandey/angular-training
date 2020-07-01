@@ -26,7 +26,8 @@
     "update:check": "ng update",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "private": true,
   "dependencies": {
@@ -48,7 +49,11 @@
     "express": "~4.17.1",
     "http-errors": "~1.7.3",
     "jade": "~1.11.0",
-    "morgan": "~1.10.0"
+    "morgan": "~1.10.0",
+    "@ngrx/store": "9.1.0",
+    "@ngrx/effects": "9.1.0",
+    "@ngrx/entity": "9.1.0",
+    "@ngrx/router-store": "9.1.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.901.0",
@@ -72,6 +77,8 @@
     "ts-jest": "25.2.1",
     "ts-node": "~7.0.1",
     "tslint": "~6.0.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "@ngrx/schematics": "9.1.0",
+    "@ngrx/store-devtools": "9.1.0"
   }
 }

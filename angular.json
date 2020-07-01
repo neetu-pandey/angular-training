@@ -124,6 +124,129 @@
           }
         }
       }
+    },
+    "ngrx-store-app": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/ngrx-store-app",
+      "sourceRoot": "apps/ngrx-store-app/src",
+      "prefix": "fis",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/ngrx-store-app",
+            "index": "apps/ngrx-store-app/src/index.html",
+            "main": "apps/ngrx-store-app/src/main.ts",
+            "polyfills": "apps/ngrx-store-app/src/polyfills.ts",
+            "tsConfig": "apps/ngrx-store-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/ngrx-store-app/src/favicon.ico",
+              "apps/ngrx-store-app/src/assets"
+            ],
+            "styles": ["apps/ngrx-store-app/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ngrx-store-app/src/environments/environment.ts",
+                  "with": "apps/ngrx-store-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngrx-store-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngrx-store-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngrx-store-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/ngrx-store-app/tsconfig.app.json",
+              "apps/ngrx-store-app/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/ngrx-store-app/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/ngrx-store-app/jest.config.js",
+            "tsConfig": "apps/ngrx-store-app/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/ngrx-store-app/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "ngrx-store-app-e2e": {
+      "root": "apps/ngrx-store-app-e2e",
+      "sourceRoot": "apps/ngrx-store-app-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/ngrx-store-app-e2e/cypress.json",
+            "tsConfig": "apps/ngrx-store-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "ngrx-store-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngrx-store-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/ngrx-store-app-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/ngrx-store-app-e2e/**/*"]
+          }
+        }
+      }
     }
   },
   "cli": {

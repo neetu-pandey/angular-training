@@ -25,6 +25,13 @@
     "ng-training-e2e": {
       "tags": [],
       "implicitDependencies": ["ng-training"]
+    },
+    "ngrx-store-app": {
+      "tags": []
+    },
+    "ngrx-store-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ngrx-store-app"]
     }
   }
 }
