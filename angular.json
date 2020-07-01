@@ -88,12 +88,12 @@
           }
         },
         "test": {
-          "builder": "@nrwl/jest:jest",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "jestConfig": "apps/ng-training/jest.config.js",
-            "tsConfig": "apps/ng-training/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "apps/ng-training/src/test-setup.ts"
+            "main": "apps/ng-training/src/test.ts",
+            "karmaConfig": "apps/ng-training/karma.conf.js",
+            "polyfills": "apps/ng-training/src/polyfills.ts",
+            "tsConfig": "apps/ng-training/tsconfig.spec.json"
           }
         }
       }
@@ -286,11 +286,11 @@
   },
   "schematics": {
     "@nrwl/angular:application": {
-      "unitTestRunner": "jest",
+      "unitTestRunner": "karma",
       "e2eTestRunner": "cypress"
     },
     "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
+      "unitTestRunner": "karma"
     }
   },
   "defaultProject": "ng-training"

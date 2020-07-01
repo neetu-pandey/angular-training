@@ -29,20 +29,8 @@ const fadeIn = [
 @Component({
   selector: 'fis-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  animations: [
-    trigger('routerAnimations', [
-      transition('* => *', fadeIn)
-    ])
-  ]
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'ng-training';
-
-  prepareRouteTransition(outlet) {
-    console.log('outlet..........', outlet);
-    const animation = outlet.activatedRouteData['animation'] || {};
-    console.log('animation.......', animation);
-    return animation['value'] || null;
-  }
 }
