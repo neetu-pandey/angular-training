@@ -1,27 +1,16 @@
-<!-- <nav mat-tab-nav-bar>
-  <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.link" routerLinkActive #rla="routerLinkActive"
-    [active]="rla.isActive">
-    {{link.label}}
-  </a>
-</nav>
-<router-outlet></router-outlet> -->
-
 <mat-toolbar color="primary" class="header">
   <span class="nav-tool-items">
-    <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
+    <mat-icon (click)="sidenav.toggle()" aria-label="Main menu" class="hamburger">menu</mat-icon>
     Angular Training
   </span>
-
-
-
 </mat-toolbar>
 
 <mat-sidenav-container>
   <!-- Sidenav -->
   <mat-sidenav autosize #sidenav opened="false" [fixedInViewport]="true" [fixedTopGap]>
     <mat-nav-list>
-      <a mat-list-item *ngFor="let link of navLinks" (click)="sidenav.toggle()" [routerLink]="link.link" routerLinkActive #rla="routerLinkActive"
-        [active]="rla.isActive">
+      <a mat-list-item *ngFor="let link of navLinks" (click)="sidenav.toggle()" [routerLink]="link.link"
+        routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
         <mat-icon>dashboard</mat-icon>{{link.label}}
       </a>
     </mat-nav-list>

@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {startWith, map, debounceTime, distinctUntilChanged, filter} from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { NgTrainingService } from '../../services/ng-training.service';
 
 export interface StateGroup {
   letter: string;
@@ -32,10 +33,10 @@ export class Rxjs4Component implements OnInit {
   stateGroups: StateGroup[] = [];
   stateGroupOptions$: Observable<StateGroup[]>;
 
-  constructor(private _formBuilder: FormBuilder, private http: HttpClient) {}
+  constructor(private _formBuilder: FormBuilder, private http: HttpClient, private service: NgTrainingService) {}
 
   ngOnInit() {
-    this.http.get('/api/states')//.subscribe(res => this.stateGroups = res['States']);
+    this.service.getStates().subscribe(res => this.stateGroups = res['States']);
 
     // tslint:disable-next-line: no-non-null-assertion
     this.stateGroupOptions$ = this.stateForm.get('stateGroup')!.valueChanges

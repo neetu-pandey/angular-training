@@ -8,7 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { ShellComponent } from './shell.component';
 
-fdescribe('ShellComponent', () => {
+describe('ShellComponent', () => {
   let component: ShellComponent;
   let fixture: ComponentFixture<ShellComponent>;
 

@@ -51,6 +51,7 @@ import { I18nLinksComponent } from './i18n/i18n-links/i18n-links.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { NgTrainingService } from './services/ng-training.service';
 
 
 // the second parameter 'fr' is optional
@@ -77,7 +78,7 @@ registerLocaleData(localeFr, 'fr');
     MatToolbarModule,
     AppRoutingModule
   ],
-  providers: [ ],
+  providers: [ NgTrainingService ],
   schemas: [ NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent],
 })
