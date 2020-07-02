@@ -1,0 +1,45 @@
+<mat-card>
+  <p> 1) <strong>keyvalue</strong> used for convert object to array in ngFor</p>
+  <hr>
+  <div *ngFor="let t of car | keyvalue">
+    <p>{{t.key}} => {{t.value}}</p>
+  </div>
+
+  <hr>
+  <p> <strong>2) date</strong></p>
+  <p> {{ birthday | date }}</p>
+  <p> {{ birthday | date:"MM/dd/yy" }}</p>
+  <p> {{ birthday | date:"MMM/d/yy" }}</p>
+  <p> {{ birthday | date:format }} <button (click)="toggleDate()">toggle</button></p>
+
+  <hr>
+
+  <p> 3) <strong>uppercase</strong></p>
+  <p>{{'keepnote' | uppercase}}</p>
+
+  <hr>
+  <p> 4) <strong>lowercase</strong></p>
+  <p>{{'KEEPNOTE' | lowercase}}</p>
+
+  <hr>
+  <p> 5) <strong>titlecase</strong></p>
+  <p>{{'paresh gami' | titlecase}}</p>
+  <p>{{'tHIs is mIXeD CaSe' | titlecase}}</p>
+
+  <hr>
+  <p> 6) <strong>currency</strong></p>
+  <p>{{'100.22' | currency}}</p>
+  <p>{{'100.22' | currency:'EUR'}}</p>
+  <p>{{'100.22' | currency:'INR'}}</p>
+
+  <hr>
+  <p> 7) <strong>percent</strong></p>
+  <p>A: {{a | percent}}</p>
+  <p>B: {{b | percent:'4.3-3'}}</p>
+
+
+
+  <p>{{pi | number}}</p>
+
+
+</mat-card>

@@ -30,7 +30,17 @@ export class ShellComponent implements OnInit {
       {
         label: 'RxJS',
         link: './rxjs',
-        index: 2
+        index: 3
+      },
+      {
+        label: 'Pipes',
+        link: './pipes',
+        index: 4
+      },
+      {
+        label: 'i18n',
+        link: './i18n',
+        index: 5
       }
     ];
   }

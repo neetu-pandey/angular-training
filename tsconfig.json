@@ -19,5 +19,8 @@
       "@fis/customers": ["libs/customers/src/index.ts"]
     }
   },
+  "angularCompilerOptions": {
+    // "enableIvy": false
+  },
   "exclude": ["node_modules", "tmp"]
 }
