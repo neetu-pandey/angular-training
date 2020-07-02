@@ -1,17 +1,19 @@
 <mat-card>
   <mat-card-title>Customers</mat-card-title>
-  <mat-selection-list #customers [multiple]="false">
-    <mat-list-option *ngFor="let customer of customers$ | async; let i=index">
-      <p matLine *ngIf="!isEdit">
+  <mat-list #customers>
+    <mat-list-item *ngFor="let customer of customers$ | async; let i=index">
+      <p *ngIf="!isEdit">
         <span> {{i+1}}. {{customer.name}} </span>
-        <button mat-icon-button>
-          <mat-icon (click)="delete(customer)">delete</mat-icon>
-        </button>
-        <button mat-icon-button>
-          <mat-icon (click)="showEdit(customer)">edit</mat-icon>
-        </button>
+        <span>
+          <button mat-icon-button>
+            <mat-icon (click)="delete(customer)">delete</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon (click)="showEdit(customer)">edit</mat-icon>
+          </button>
+        </span>
       </p>
-      <p matLine *ngIf="isEdit && selectedCustomer === customer.id">
+      <p *ngIf="isEdit && selectedCustomer === customer.id">
         <mat-form-field style="width: 200px;">
           <mat-label>Customer Name</mat-label>
           <input matInput type="text" [(ngModel)]="updatedName">
@@ -20,6 +22,6 @@
           <mat-icon (click)="edit(customer)">check</mat-icon>
         </button>
       </p>
-    </mat-list-option>
-  </mat-selection-list>
+    </mat-list-item>
+  </mat-list>
 </mat-card>

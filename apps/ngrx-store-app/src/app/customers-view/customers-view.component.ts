@@ -44,6 +44,7 @@ export class CustomersViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.store.dispatch({ type: '[Customers] Load Customers' });
   }
 
 }

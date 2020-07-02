@@ -10,11 +10,11 @@ export const getCustomersState = createFeatureSelector<State>(CUSTOMERS_FEATURE_
 
 export const { selectAll, selectEntities, selectTotal } = customersAdapter.getSelectors(getCustomersState);
 
-export const getCustomersLoaded = createSelector(getCustomersState, (state: State) => state.loaded );
+export const getCustomersLoaded = createSelector(getCustomersState, (state: State) => state.loaded);
 
 export const getCustomersError = createSelector(getCustomersState, (state: State) => state.error);
 
-export const getAllCustomers = createSelector(getCustomersState, (state: State) => selectAll(state));
+export const getAllCustomers = createSelector(createFeatureSelector<State>(CUSTOMERS_FEATURE_KEY), (state: State) => selectAll(state));
 
 export const getCustomersCount = createSelector(getCustomersState, (state: State) => selectTotal(state));
 

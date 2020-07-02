@@ -14,7 +14,6 @@ export interface State extends EntityState<CustomersEntity> {
 export const customersAdapter: EntityAdapter<CustomersEntity> = createEntityAdapter< CustomersEntity >();
 
 export const initialState: State = customersAdapter.getInitialState({
-  // set initial required properties
   loaded: false,
 });
 

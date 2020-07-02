@@ -24,6 +24,7 @@ import { CustomerAddComponent } from './customer-add/customer-add.component';
 
 import { counterReducer } from './counter/counter.reducer';
 import { MyCounterComponent } from './counter/my-counter/my-counter.component';
+import { CustomerService } from 'libs/customers/src/lib/services/customer.service';
 
 @NgModule({
   declarations: [AppComponent, CustomersViewComponent, CustomerAddComponent, MyCounterComponent],
@@ -53,7 +54,7 @@ import { MyCounterComponent } from './counter/my-counter/my-counter.component';
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreRouterConnectingModule.forRoot(),
   ],
-  providers: [],
+  providers: [CustomerService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

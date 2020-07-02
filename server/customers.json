@@ -1,0 +1,28 @@
+{
+  "Customers": [
+    {
+      "id": 100,
+      "name": "Cust 100"
+    },
+    {
+      "id": 101,
+      "name": "Cust 101"
+    },
+    {
+      "id": 102,
+      "name": "Cust 102"
+    },
+    {
+      "id": 103,
+      "name": "Cust 103"
+    },
+    {
+      "id": 104,
+      "name": "Cust 104"
+    },
+    {
+      "id": 105,
+      "name": "Cust 105"
+    }
+  ]
+}

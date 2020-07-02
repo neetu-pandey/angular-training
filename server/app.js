@@ -32,6 +32,10 @@ app.get('/api/states', (req, res) => {
   res.sendFile(path.join(__dirname, '.', 'states.json'));
 });
 
+app.get('/api/customers', (req, res) => {
+  res.sendFile(path.join(__dirname, '.', 'customers.json'));
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
