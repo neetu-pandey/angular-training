@@ -12,6 +12,7 @@ export class CustomerAddComponent implements OnInit {
 
   customers: Observable<CustomersEntity[]>;
   id = 1;
+  value: any;
 
   constructor(private store: Store<{ customers: CustomersEntity[] }>) {
     this.customers = store.pipe(select('customers'));
@@ -23,6 +24,7 @@ export class CustomerAddComponent implements OnInit {
     customer.id = this.id++;
 
     this.store.dispatch(addCustomer( { customer: customer } ));
+    this.value = ''
   }
 
   ngOnInit(): void {

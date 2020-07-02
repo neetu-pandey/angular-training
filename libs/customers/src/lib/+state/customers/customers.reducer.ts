@@ -34,6 +34,12 @@ const customersReducer = createReducer(
   })),
   on(CustomersActions.addCustomer, (state, { customer }) =>
     customersAdapter.addOne(customer, { ...state, loaded: true })
+  ),
+  on(CustomersActions.editCustomer, (state, { update }) =>
+    customersAdapter.updateOne(update, { ...state, loaded: true})
+  ),
+  on(CustomersActions.removeCustomer, (state, { custId }) =>
+    customersAdapter.removeOne(custId, { ...state, loaded: true})
   )
 );
 

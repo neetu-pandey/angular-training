@@ -1,5 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { CustomersEntity } from './customers.models';
+import { Update } from '@ngrx/entity';
 
 export const loadCustomers = createAction('[Customers] Load Customers');
 
@@ -20,5 +21,10 @@ export const addCustomer = createAction(
 
 export const removeCustomer = createAction(
   '[Customers] Remove Customer',
-  props<{ customer: CustomersEntity }>()
+  props<{ custId: number }>()
+)
+
+export const editCustomer = createAction(
+  '[Customers] Update Customer',
+  props<{ update: Update<CustomersEntity> }>()
 )
