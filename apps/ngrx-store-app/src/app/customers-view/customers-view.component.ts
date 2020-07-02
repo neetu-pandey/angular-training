@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CustomersEntity, loadCustomers, selectAll, selectEntities, selectTotal, removeCustomer, editCustomer } from '@fis/customers';
+import { CustomersEntity, loadCustomers, selectAll, removeCustomer, editCustomer } from '@fis/customers';
 import { Store, select } from '@ngrx/store';
 
 @Component({
@@ -8,7 +8,7 @@ import { Store, select } from '@ngrx/store';
   templateUrl: './customers-view.component.html',
   styleUrls: ['./customers-view.component.scss']
 })
-export class CustomersViewComponent implements OnInit {
+export class CustomersViewComponent {
 
   customers$: Observable<CustomersEntity[]>;
   updatedName: string;
@@ -18,17 +18,10 @@ export class CustomersViewComponent implements OnInit {
   constructor(private store: Store< { customers: CustomersEntity[] } >) {
     this.store.dispatch(loadCustomers());
     store.pipe(select('customers'));
-
     this.customers$ = store.select(selectAll);
-
-    store.select(selectTotal).subscribe(entity => {
-      console.log('entity...............', entity);
-    });
-
   }
 
   delete(item) {
-    console.log('in delete..', item);
     this.store.dispatch(removeCustomer( { custId: item.id } ));
   }
 
@@ -41,10 +34,6 @@ export class CustomersViewComponent implements OnInit {
   edit(item) {
     this.store.dispatch(editCustomer({ update: { id: item.id, changes: { name: this.updatedName } } }));
     this.isEdit = false;
-  }
-
-  ngOnInit(): void {
-    this.store.dispatch({ type: '[Customers] Load Customers' });
   }
 
 }
