@@ -12,4 +12,12 @@ export class NgTrainingService {
     return this.http.get('/api/states');
   }
 
+  getStudents() {
+    return this.http.get('/api/students');
+  }
+
+  getStudentDetails(studentId) {
+    return this.http.get(`/api/students/${studentId}`)
+  }
+
 }

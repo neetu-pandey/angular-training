@@ -41,6 +41,11 @@ export class ShellComponent implements OnInit {
         label: 'i18n',
         link: './i18n',
         index: 5
+      },
+      {
+        label: 'testing',
+        link: './testing',
+        index: 6
       }
     ];
   }

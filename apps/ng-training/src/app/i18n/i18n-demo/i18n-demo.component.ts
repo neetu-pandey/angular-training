@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class I18nDemoComponent implements OnInit {
 
-  tabNames = ['Native', '@ngx/core'];
+  tabNames = ['Native', '@ngx-translate'];
 
   constructor() { }
 

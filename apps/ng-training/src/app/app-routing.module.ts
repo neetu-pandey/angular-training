@@ -7,6 +7,8 @@ import { FlexboxDemoComponent } from './flexbox/flexbox-demo/flexbox-demo.compon
 import { RxjsDemoComponent } from './rxjs/rxjs-demo/rxjs-demo.component';
 import { PipeDemoComponent } from './pipes/pipe-demo/pipe-demo.component';
 import { I18nDemoComponent } from './i18n/i18n-demo/i18n-demo.component';
+import { TestingDemoComponent } from './testing/testing-demo/testing-demo.component';
+
 
 const routes: Routes = [
   {
@@ -41,10 +43,13 @@ const routes: Routes = [
       {
         path: 'i18n',
         component: I18nDemoComponent
+      },
+      {
+        path: 'testing',
+        component: TestingDemoComponent
       }
     ]
   }
-
 ];
 
 @NgModule({

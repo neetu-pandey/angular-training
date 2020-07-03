@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { NgTrainingService } from './ng-training.service';
@@ -24,7 +23,7 @@ describe('NgTrainingService', () => {
     expect(service).toBeTruthy();
   });
 
-  fit('be able to retrieve posts from the API bia GET', () => {
+  it('be able to retrieve posts from the API bia GET', () => {
     const mockStates = {
       "States": [
         {

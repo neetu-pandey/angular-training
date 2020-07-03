@@ -46,6 +46,8 @@
     "@ngrx/entity": "9.1.0",
     "@ngrx/router-store": "9.1.0",
     "@ngrx/store": "9.1.0",
+    "@ngx-translate/core": "~13.0.0",
+    "@ngx-traslate/http-loader": "~6.0.0",
     "cookie-parser": "~1.4.5",
     "core-js": "^3.6.4",
     "debug": "~4.1.1",

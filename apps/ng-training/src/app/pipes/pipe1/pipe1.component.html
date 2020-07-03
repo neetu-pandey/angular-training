@@ -1,45 +1,135 @@
 <mat-card>
-  <p> 1) <strong>keyvalue</strong> used for convert object to array in ngFor</p>
-  <hr>
-  <div *ngFor="let t of car | keyvalue">
-    <p>{{t.key}} => {{t.value}}</p>
-  </div>
+  <mat-card-title>Text-based Pipes!</mat-card-title>
+  <mat-card-content>
+    <p>This is our string: {{text}}</p>
+    <br>
 
-  <hr>
-  <p> <strong>2) date</strong></p>
-  <p> {{ birthday | date }}</p>
-  <p> {{ birthday | date:"MM/dd/yy" }}</p>
-  <p> {{ birthday | date:"MMM/d/yy" }}</p>
-  <p> {{ birthday | date:format }} <button (click)="toggleDate()">toggle</button></p>
+    <p>Uppercase Pipe -> {{text | uppercase}}</p>
+    <p>Lowercase Pipe -> {{text | lowercase}}</p>
+    <p>Titlecase Pipe -> {{text | titlecase}}</p>
+  </mat-card-content>
+</mat-card>
 
-  <hr>
+<mat-card>
+  <mat-card-title>Number-based Pipes</mat-card-title>
+  <mat-card-content>
+    <p>This is our small number: {{smallNumber}}</p>
+    <p>Decimal Pipe: {{smallNumber | number}} (This is 3 decimal places by default)</p>
+    <p>Decimal Pipe at 4 decimal places: {{smallNumber | number:'1.4'}}</p>
+  </mat-card-content>
+</mat-card>
 
-  <p> 3) <strong>uppercase</strong></p>
-  <p>{{'keepnote' | uppercase}}</p>
+<mat-card>
+  <mat-card-title>Percent Pipe</mat-card-title>
+  <mat-card-content>
+    <p>Our number for percent: {{percent}}</p>
+    <p>Percent Pipe: {{percent | percent}}</p>
+  </mat-card-content>
+</mat-card>
 
-  <hr>
-  <p> 4) <strong>lowercase</strong></p>
-  <p>{{'KEEPNOTE' | lowercase}}</p>
+<mat-card>
+  <mat-card-title>Currency Pipe</mat-card-title>
+  <mat-card-content>
+    <p>Our number: {{money}}</p>
+    <p>Currency Pipe: {{money | currency}}</p>
+    <p>Canadian Currency: {{money | currency:'CAD'}}</p>
+    <p>Indian Currency: {{money | currency:'INR'}}</p>
+  </mat-card-content>
+</mat-card>
 
-  <hr>
-  <p> 5) <strong>titlecase</strong></p>
-  <p>{{'paresh gami' | titlecase}}</p>
-  <p>{{'tHIs is mIXeD CaSe' | titlecase}}</p>
+<mat-card>
+  <mat-card-title>JSON Pipe</mat-card-title>
+  <mat-card-content>
+    <pre>Object: {{data}}</pre>
+    <pre>Object with JsonPipe: {{data | json}}</pre>
 
-  <hr>
-  <p> 6) <strong>currency</strong></p>
-  <p>{{'100.22' | currency}}</p>
-  <p>{{'100.22' | currency:'EUR'}}</p>
-  <p>{{'100.22' | currency:'INR'}}</p>
+    <pre>array: {{array}}</pre>
+    <pre>array with pipe: {{array | json}}</pre>
+  </mat-card-content>
+</mat-card>
 
-  <hr>
-  <p> 7) <strong>percent</strong></p>
-  <p>A: {{a | percent}}</p>
-  <p>B: {{b | percent:'4.3-3'}}</p>
+<mat-card>
+  <mat-card-title>Slice Pipe</mat-card-title>
+  <mat-card-content>
+    <p>Short String: {{shortString}}</p>
+    <p>Short String with Slice Pipe: {{shortString | slice: 0:2}}</p>
 
+    <p>Long string (Characters 10-19 inclusive): {{longString | slice: 10:20}}</p>
+    <p *ngIf='showLongString; else shortStringTemplate'>{{longString}}</p>
 
+    <ng-template #shortStringTemplate>
+      <p>{{longString | slice: 0: 50}}...</p>
+    </ng-template>
 
-  <p>{{pi | number}}</p>
+    <button mat-raised-button
+      (click)="toggleLongString()">{{showLongString ? "Show Short String" : "Show Long String"}}</button>
 
+    <p>{{numbers | slice: 0: 4}}</p>
+    <p>{{numbers | slice: 0: 4 | json}}</p>
+    <hr>
 
+    <h2 id='keyvalue'>Key-Value Pipes!</h2>
+    <h3>Default Key-Value pipe</h3>
+    <p *ngFor="let item of person | keyvalue">
+      {{item.key}} - {{item.value}}
+    </p>
+
+    <h3>Custom Sort functions:</h3>
+
+    <h4>Sort by decreasing length of string values</h4>
+    <p *ngFor="let item of person | keyvalue:customCompareFn">
+      {{item.key}} - {{item.value}}
+    </p>
+
+    <h4>Sort by increasing expiry dates</h4>
+    <p *ngFor='let item of inventory | keyvalue:increasingExpDate'>
+      {{item.value.name}} expires at {{item.value.expDate | date}}
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Date Pipe</mat-card-title>
+  <mat-card-content>
+    <p>Date without Pipe: {{date}}</p>
+    <p>Date with Pipe: {{date | date}} </p>
+
+    <h3>Showing Dates</h3>
+    <p>Short Date: {{date | date:'shortDate'}}</p>
+    <p>Medium Date: {{date | date:'mediumDate'}}</p>
+    <p>Long Date: {{date | date:'longDate'}}</p>
+
+    <h3>Dates with Parameters</h3>
+    <p>dd/mm/yyyy: {{date | date:'d MMM y'}}</p>
+    <p>yyyy/mm/dd: {{date | date:'y MMM d'}}</p>
+
+    <h3>Formatting Times</h3>
+    <p>Short time: {{date | date:'shortTime'}}</p>
+    <p>Medium time: {{date | date:'mediumTime'}}</p>
+    <p>Long time: {{date | date:'longTime'}}</p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>HTTP request without Pipes</mat-card-title>
+  <mat-card-content>
+    <div *ngIf='dataLoaded; else loading'>
+      <pre>{{character | json}}</pre>
+    </div>
+    <ng-template #loading>
+      <p>Getting data from Server...</p>
+    </ng-template>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>HTTP request with Pipe</mat-card-title>
+  <mat-card-content>
+    <div *ngIf='character$ | async as char1; else loading1'>
+      <pre>{{char1 | json}}</pre>
+    </div>
+    <ng-template #loading1>
+      <p>Loading using pipe...</p>
+    </ng-template>
+  </mat-card-content>
 </mat-card>
