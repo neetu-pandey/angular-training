@@ -1,3 +1,11 @@
-<label for="search-term">Search</label>
-<input mat-input placeholder="Enter term" (input)="updateSearch($event)" id="search-term">
-<div *ngFor="let result of results" [innerHTML]="result.summary | highlight: searchTerm"></div>
+<mat-card>
+  <mat-card-title>Highlight Pipe</mat-card-title>
+  <mat-card-content>
+    <mat-form-field class="example-form-field">
+      <mat-label for="search-term">Search:</mat-label>
+      <input matInput placeholder="Enter term" (input)="updateSearch($event)" id="search-term">
+    </mat-form-field>
+
+    <div *ngFor="let result of results" [innerHTML]="result.summary | highlight: searchTerm"></div>
+  </mat-card-content>
+</mat-card>

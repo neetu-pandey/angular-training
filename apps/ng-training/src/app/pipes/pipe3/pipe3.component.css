@@ -1,0 +1,15 @@
+mat-card {
+  margin: 15px;
+}
+
+li {
+  list-style-type: none;
+  margin: 10px;
+}
+
+ul {
+  list-style-position: inside;
+  padding-left: 0;
+  border: 1px solid #efefef;
+  padding: 12px 8px;
+}

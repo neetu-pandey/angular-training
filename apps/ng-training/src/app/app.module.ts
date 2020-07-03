@@ -60,6 +60,8 @@ import { TestingDemoComponent } from './testing/testing-demo/testing-demo.compon
 import { Testing1Component } from './testing/testing1/testing1.component';
 import { TestingLinksComponent } from './testing/testing-links/testing-links.component';
 import { Testing2Component } from './testing/testing2/testing2.component';
+import { Pipe3Component } from './pipes/pipe3/pipe3.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 export function translateHttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -70,7 +72,7 @@ export function translateHttpLoaderFactory(http: HttpClient) {
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
-  declarations: [AppComponent, ShellComponent, HomeComponent, AnimationDemoComponent, TabsContainerComponent, Example1Component, Example2Component, Example3Component, FlexboxDemoComponent, Flexbox1Component, Flexbox2Component, CardComponent, RxjsDemoComponent, Rxjs1Component, Rxjs2Component, Example4Component, Flexbox3Component, AnimationLinksComponent, FlexboxLinksComponent, Rxjs3Component, Rxjs4Component, RxjsLinksComponent, PipeDemoComponent, Pipe1Component, Pipe2Component, PipeLinksComponent, I18nDemoComponent, I18n1Component, I18n2Component, I18nLinksComponent, HighlightPipe, TestingDemoComponent, Testing1Component, TestingLinksComponent, Testing2Component],
+  declarations: [AppComponent, ShellComponent, HomeComponent, AnimationDemoComponent, TabsContainerComponent, Example1Component, Example2Component, Example3Component, FlexboxDemoComponent, Flexbox1Component, Flexbox2Component, CardComponent, RxjsDemoComponent, Rxjs1Component, Rxjs2Component, Example4Component, Flexbox3Component, AnimationLinksComponent, FlexboxLinksComponent, Rxjs3Component, Rxjs4Component, RxjsLinksComponent, PipeDemoComponent, Pipe1Component, Pipe2Component, PipeLinksComponent, I18nDemoComponent, I18n1Component, I18n2Component, I18nLinksComponent, HighlightPipe, TestingDemoComponent, Testing1Component, TestingLinksComponent, Testing2Component, Pipe3Component, FilterPipe],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

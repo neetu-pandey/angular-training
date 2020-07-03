@@ -1,5 +1,5 @@
-:host {
-  font-family: sans-serif;
+mat-card {
+  margin: 15px;
 }
 
 input {
@@ -10,11 +10,4 @@ input {
 div {
   border: 1px solid #efefef;
   padding: 12px 8px;
-}
-
-label {
-  display: block;
-  font-size: 12px;
-  margin-bottom: 8px;
-  opacity: .5;
 }

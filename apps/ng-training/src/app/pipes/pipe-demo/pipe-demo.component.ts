@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipeDemoComponent implements OnInit {
 
-  tabNames = ['Built-in Pipes', 'Custom Pipes'];
+  tabNames = ['Built-in Pipes', 'Highlight Pipe', 'Filter Pipe'];
 
   constructor() { }
 
