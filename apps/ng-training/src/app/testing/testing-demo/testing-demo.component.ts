@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./testing-demo.component.css']
 })
 export class TestingDemoComponent implements OnInit {
-  tabNames = ['Students', 'Test 2'];
+  tabNames = ['Unit Testing (Student)'];
 
   constructor() { }
 

@@ -1,4 +1,5 @@
 {
   "Title": "Übersetzung demo",
-  "WelcomeMessage": "Willkommen zur multilanguage Demo App"
+  "WelcomeMessage": "Willkommen zur multilanguage Demo App",
+  "HELLO": "Hola {{value}}"
 }

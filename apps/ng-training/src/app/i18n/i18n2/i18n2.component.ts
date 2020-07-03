@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./i18n2.component.css']
 })
 export class I18n2Component {
+  param = { value: 'Neetu' };
 
   constructor(private translateService: TranslateService) {
     translateService.addLangs(['en', 'de']);

@@ -1,6 +1,7 @@
 <mat-card>
   <mat-card-title translate>Title</mat-card-title>
   <div translate>WelcomeMessage</div>
+  <div>{{ 'HELLO' | translate:param }}</div>
 
   <button mat-raised-button color="primary" (click)="switchLanguage('en')">English</button>
   <button mat-raised-button color="accent" (click)="switchLanguage('de')">German</button>

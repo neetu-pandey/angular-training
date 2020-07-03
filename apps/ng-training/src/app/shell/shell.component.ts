@@ -43,7 +43,7 @@ export class ShellComponent implements OnInit {
         index: 5
       },
       {
-        label: 'testing',
+        label: 'Unit Testing',
         link: './testing',
         index: 6
       }

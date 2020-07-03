@@ -12,6 +12,10 @@ export class HighlightPipe implements PipeTransform {
     if (!args) {
       return value;
     }
+    console.log('value....', value);
+    console.log('args....', args);
+
+
     // The gi modifier is used to do a case insensitive search of all occurrences of a regular expression in a string.
     const re = new RegExp(args, 'gi');
     const match = value.match(re);

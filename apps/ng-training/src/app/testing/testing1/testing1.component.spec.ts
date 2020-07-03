@@ -2,11 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { Testing1Component } from './testing1.component';
-
 import { NgTrainingService } from './../../services/ng-training.service';
 import { StudentsServiceStub } from './service.mock';
 import { By } from '@angular/platform-browser';
-import { throwError } from 'rxjs';
 
 fdescribe('Testing1Component', () => {
   let component: Testing1Component;

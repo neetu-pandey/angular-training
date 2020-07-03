@@ -1,19 +1,17 @@
 <mat-card>
-  <mat-card-title>Text-based Pipes!</mat-card-title>
+  <mat-card-title>Text-based Pipes</mat-card-title>
   <mat-card-content>
-    <p>This is our string: {{text}}</p>
-    <br>
-
-    <p>Uppercase Pipe -> {{text | uppercase}}</p>
-    <p>Lowercase Pipe -> {{text | lowercase}}</p>
-    <p>Titlecase Pipe -> {{text | titlecase}}</p>
+    <p><b>String:</b> {{text}}</p>
+    <p>Uppercase Pipe: {{text | uppercase}}</p>
+    <p>Lowercase Pipe: {{text | lowercase}}</p>
+    <p>Titlecase Pipe: {{text | titlecase}}</p>
   </mat-card-content>
 </mat-card>
 
 <mat-card>
   <mat-card-title>Number-based Pipes</mat-card-title>
   <mat-card-content>
-    <p>This is our small number: {{smallNumber}}</p>
+    <p>This is a small number: {{smallNumber}}</p>
     <p>Decimal Pipe: {{smallNumber | number}} (This is 3 decimal places by default)</p>
     <p>Decimal Pipe at 4 decimal places: {{smallNumber | number:'1.4'}}</p>
   </mat-card-content>
@@ -22,7 +20,7 @@
 <mat-card>
   <mat-card-title>Percent Pipe</mat-card-title>
   <mat-card-content>
-    <p>Our number for percent: {{percent}}</p>
+    <p>Number: {{percent}}</p>
     <p>Percent Pipe: {{percent | percent}}</p>
   </mat-card-content>
 </mat-card>
@@ -30,7 +28,7 @@
 <mat-card>
   <mat-card-title>Currency Pipe</mat-card-title>
   <mat-card-content>
-    <p>Our number: {{money}}</p>
+    <p>Number: {{money}}</p>
     <p>Currency Pipe: {{money | currency}}</p>
     <p>Canadian Currency: {{money | currency:'CAD'}}</p>
     <p>Indian Currency: {{money | currency:'INR'}}</p>
@@ -66,24 +64,21 @@
 
     <p>{{numbers | slice: 0: 4}}</p>
     <p>{{numbers | slice: 0: 4 | json}}</p>
-    <hr>
+  </mat-card-content>
+</mat-card>
 
-    <h2 id='keyvalue'>Key-Value Pipes!</h2>
-    <h3>Default Key-Value pipe</h3>
+<mat-card>
+  <mat-card-title>Key Value Pipe</mat-card-title>
+  <mat-card-content>
+    <h4>Default Key-Value pipe</h4>
     <p *ngFor="let item of person | keyvalue">
       {{item.key}} - {{item.value}}
     </p>
 
-    <h3>Custom Sort functions:</h3>
-
-    <h4>Sort by decreasing length of string values</h4>
+    <h4>Custom Sort functions:</h4>
+    <h5>Sort by decreasing length of string values</h5>
     <p *ngFor="let item of person | keyvalue:customCompareFn">
       {{item.key}} - {{item.value}}
-    </p>
-
-    <h4>Sort by increasing expiry dates</h4>
-    <p *ngFor='let item of inventory | keyvalue:increasingExpDate'>
-      {{item.value.name}} expires at {{item.value.expDate | date}}
     </p>
   </mat-card-content>
 </mat-card>

@@ -2,7 +2,7 @@
   <mat-tab [label]="demoTabNames[0]" >
     <ng-content select="demo1"></ng-content>
   </mat-tab>
-  <mat-tab [label]="demoTabNames[1]" >
+  <mat-tab [label]="demoTabNames[1]" *ngIf="demoTabs > 1" >
     <ng-content select="demo2"></ng-content>
   </mat-tab>
   <mat-tab [label]="demoTabNames[2]" *ngIf="demoTabs > 2" >

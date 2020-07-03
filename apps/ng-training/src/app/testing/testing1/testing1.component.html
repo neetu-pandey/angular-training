@@ -1,8 +1,10 @@
-<h1>Students Component</h1>
-<ul class="students-div">
-  <li *ngFor="let student of students" [id]="'usr-'+student.id" (click)="getDetails(student.id)">
-    {{student.firstName}}</li>
-</ul>
-<div id="board">
-  {{selectedStudent.firstName}} {{selectedStudent.lastName}} paid : {{fee}}
-</div>
+<mat-card>
+  <mat-card-title>Unit Testing (Students)</mat-card-title>
+  <ul class="students-div">
+    <li *ngFor="let student of students" [id]="'usr-'+student.id" (click)="getDetails(student.id)">
+      {{student.firstName}}</li>
+  </ul>
+  <div id="board">
+    {{selectedStudent.firstName}} {{selectedStudent.lastName}} paid : {{fee}}
+  </div>
+</mat-card>

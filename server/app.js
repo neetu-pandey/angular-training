@@ -43,6 +43,7 @@ app.get('/api/students', (req, res) => {
 
 app.get('/api/students/:studentId', function (req, res) {
   const result = filterStudent(req.params.studentId);
+  console.log('result..', result);
   res.send(result[0]);
 });
 
