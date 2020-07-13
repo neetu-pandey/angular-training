@@ -6,18 +6,16 @@ export class StudentsServiceStub {
       Students: [
         { id: 1, firstName: 'George', lastName: 'Bluth' },
         { id: 2, firstName: 'Janet', lastName: 'Weaver' },
-        { id: 3, firstName: 'Emma', lastName: 'Wong'  },
+        { id: 3, firstName: 'Emma', lastName: 'Wong' },
       ],
     });
   }
 
   getStudentDetails() {
     return of({
-
-        id: 1,
-        firstName: 'George',
-        lastName: 'Bluth'
-
+      id: 1,
+      firstName: 'George',
+      lastName: 'Bluth'
     });
   }
 }

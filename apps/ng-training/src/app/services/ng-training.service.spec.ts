@@ -46,12 +46,11 @@ fdescribe('NgTrainingService', () => {
       ]
     }
     service.getStates().subscribe(data => {
-      console.log('data.......', data);
       expect(data['States'].length).toBe(2);
       expect(data['States']).toEqual(mockStates['States']);
     });
     const req = httpMock.expectOne(`/api/states`);
-    expect(req.request.method).toBe("GET");
+    expect(req.request.method).toBe('GET');
     req.flush(mockStates);
   });
 });
